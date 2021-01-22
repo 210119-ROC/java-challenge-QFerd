@@ -22,7 +22,13 @@ public class EvaluationService {
 
 		public static long toMilesPerHour(double kilometersPerHour) {
 			// TODO Write an implementation for this method declaration
-			return 0;
+			if (kilometersPerHour < 0) {
+				return -1;
+				
+			} else {		
+				long milesPerHour = Math.round(kilometersPerHour * 0.621);
+				return milesPerHour;
+			}
 		}
 
 		/**
@@ -42,7 +48,14 @@ public class EvaluationService {
 		 */
 		public static String printConversion(double kilometersPerHour) {
 			// TODO Write an implementation for this method declaration
-			return null;
+			if (kilometersPerHour < 0) {
+				return "Invalid Value";
+			} else {
+				long milesPerHour = Math.round(kilometersPerHour * 0.621);
+				String string = kilometersPerHour + " km/h = " + milesPerHour + " mi/h";
+				return string;
+			}	
+		
 		}
 	}
 
@@ -68,7 +81,14 @@ public class EvaluationService {
 	 */
 	public String printMegaBytesAndKiloBytes(int XX) {
 		// TODO Write an implementation for this method declaration
-		return null;
+		if (XX < 0) {
+			return "Invalid Value";
+		} else {
+			int YY  = (int) XX/1000;
+			int ZZ = XX - YY * 1000;
+			String string = XX + " KB = " + YY + " MB and " + ZZ + " KB.";
+			return string;
+		}
 	}
 
 	/**
@@ -92,7 +112,21 @@ public class EvaluationService {
 	 */
 	public boolean shouldWakeUp(boolean isBarking, int hourOfDay) {
 		// TODO Write an implementation for this method declaration
-		return false;
+		if (isBarking == true) {
+			if (hourOfDay < 8 || hourOfDay > 22 ) {
+				if (hourOfDay < 0 || hourOfDay > 23) {
+					return false;
+				} else {
+					return true;
+				}
+				
+			} else {
+				return false;
+				}
+		} else {
+			return false;
+		}
+	
 	}
 
 	/**
@@ -108,7 +142,12 @@ public class EvaluationService {
 	 */
 	public boolean areEqualByThreeDecimalPlaces(double firstNum, double secondNum) {
 		// TODO Write an implementation for this method declaration
-		return false;
+		double dif = firstNum - secondNum;
+		if (Math.abs(dif) < 0.001) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
@@ -125,7 +164,15 @@ public class EvaluationService {
 
 		public static boolean hasTeen(int x, int y, int z) {
 			// TODO Write an implementation for this method declaration
+			if (x >= 13 && x <= 19) {
+				return true;
+			} else if (y >= 13 && y <= 19) {
+				return true;
+			} else if (z >=13 && z <= 19) {
+				return true;
+			} else {
 			return false;
+			}
 		}
 
 		// We can initialize isTeen method first
@@ -168,7 +215,32 @@ public class EvaluationService {
 	 */
 	public String printNumberInWord(int number) {
 		// TODO Write an implementation for this method declaration
-		return null;
+		switch (number) {
+			case 0:
+				return "ZERO";
+			case 1:
+				return "ONE";
+			case 2:
+				return "TWO";
+			case 3:
+				return "THREE";
+			case 4:
+				return "FOUR";
+			case 5:
+				return "FIVE";
+			case 6:
+				return "SIX";
+			case 7:
+				return "SEVEN";
+			case 8:
+				return "EIGHT";
+			case 9:
+				return "NINE";
+			default:
+				return "OTHER";
+		
+		}
+		
 	}
 
 	/**
@@ -192,6 +264,7 @@ public class EvaluationService {
 	 */
 	public int getGreatestCommonDivisor(int first, int second) {
 		// TODO Write an implementation for this method declaration
+		for ()
 		return 0;
 	}
 
